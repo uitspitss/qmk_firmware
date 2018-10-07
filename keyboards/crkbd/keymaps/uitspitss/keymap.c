@@ -71,10 +71,14 @@ enum macro_keycodes {
 #define KC_SANDS SFT_T(KC_SPC)
 #define KC_ALTTAB ALT_T(KC_TAB)
 #define KC_CTLENT CTL_T(KC_ENT)
-#define KC_SCRSHT LCTL(LGUI(KC_DLR))
+#define KC_SCSTFL LGUI(KC_DLR)
+#define KC_SCSTCB LCTL(LGUI(KC_DLR))
 #define KC_EMCUT LCTL(KC_W)
+#define KC_EMCOPY LALT(KC_W)
+#define KC_EMPST LCTL(KC_Y)
 #define KC_WINHFL LALT(LGUI(KC_LEFT))
 #define KC_WINHFR LALT(LGUI(KC_RIGHT))
+#define KC_WINFL LALT(LGUI(LSFT(KC_F)))
 #define KC_WINTHL LALT(LCTL(KC_LEFT))
 #define KC_WINTHR LALT(LCTL(KC_RIGHT))
 
@@ -108,9 +112,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------.                ,-----------------------------------------.
       XXXXX,  EXLM,    AT,  HASH,   DLR,  PERC,                   CIRC,  AMPR,  ASTR,  LPRN,  RPRN, XXXXX,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-      XXXXX,  TILD, EMCUT,WINHFL,WINHFR,  LCBR,                   RCBR, _____, _____,  PIPE,   DQT, XXXXX,\
+      XXXXX,  TILD, WINFL,WINHFL,WINHFR,  LCBR,                   RCBR, _____, _____,  PIPE,   DQT, XXXXX,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-      XXXXX, _____, _____, _____, _____,  PLUS,                   UNDS, _____, _____, _____,   DEL, XXXXX,\
+      XXXXX, _____,EMCUT, EMCOPY, EMPST,  PLUS,                   UNDS, _____, _____, _____,   DEL, XXXXX,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
                                   _____, _____, _____,    _____, _____, _____ \
                               //`--------------------'  `--------------------'
@@ -120,7 +124,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------.                ,-----------------------------------------.
       XXXXX,    F1,    F2,    F3,    F4,    F5,                     F6,    F7,    F8,    F9,   F10, XXXXX,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-      XXXXX,   F11,   F12,SCRSHT, _____, _____,                   LEFT,  DOWN,    UP,  RGHT, LANG1, XXXXX,\
+      XXXXX,   F11,   F12,SCSTCB,SCSTFL, _____,                   LEFT,  DOWN,    UP,  RGHT, LANG1, XXXXX,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
       XXXXX,   RST,  LTOG, LSMOD,  LHUI,  LHUD,                   LVAI,  LVAD,  LSAI,  LSAD, LANG2, XXXXX,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
