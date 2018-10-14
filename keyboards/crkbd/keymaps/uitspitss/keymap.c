@@ -75,7 +75,7 @@ enum macro_keycodes {
 #define KC_SCSTCB LCTL(LGUI(KC_DLR))
 #define KC_WNHLFL LALT(LGUI(KC_LEFT))
 #define KC_WNHLFR LALT(LGUI(KC_RIGHT))
-#define KC_WINFL LALT(LGUI(LSFT(KC_F)))
+#define KC_WNFLSC LALT(LGUI(LSFT(KC_F)))
 #define KC_WNTHDL LALT(LCTL(KC_LEFT))
 #define KC_WNTHDR LALT(LCTL(KC_RIGHT))
 #define KC_WNUNDO LALT(LGUI(KC_Z))
@@ -111,7 +111,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------.                ,-----------------------------------------.
       XXXXX,  EXLM,    AT,  HASH,   DLR,  PERC,                   CIRC,  AMPR,  ASTR,  LPRN,  RPRN, XXXXX,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-      XXXXX,  TILD,WNHLFL,WNHLFL,WNHLFR,  LCBR,                   RCBR, _____, _____,  PIPE,   DQT, XXXXX,\
+      XXXXX,  TILD,WNFLSC,WNHLFL,WNHLFR,  LCBR,                   RCBR, _____, _____,  PIPE,   DQT, XXXXX,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
       XXXXX, _____,WNUNDO,WNTHDL,WNTHDR,  PLUS,                   UNDS, _____, _____, _____,   DEL, XXXXX,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
