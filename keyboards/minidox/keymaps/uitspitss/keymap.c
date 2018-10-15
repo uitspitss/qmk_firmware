@@ -23,8 +23,22 @@ enum custom_keycodes {
 #define XXXXXXX KC_NO
 
 // Defines for task manager and such
-#define SCRSHOT LCTL(LGUI(KC_DLR))
-#define EMCSCUT LCTL(KC_W)
+#define KC_CTLTB CTL_T(KC_TAB)
+#define KC_GUIEI GUI_T(KC_LANG2)
+#define KC_ALTKN ALT_T(KC_LANG1)
+#define KC_CMDESC GUI_T(KC_ESC)
+#define KC_SANDS SFT_T(KC_SPC)
+#define KC_ALTTAB ALT_T(KC_TAB)
+#define KC_CTLENT CTL_T(KC_ENT)
+#define KC_SCSTFL LGUI(KC_DLR)
+#define KC_SCSTCB LCTL(LGUI(KC_DLR))
+#define KC_WNHLFL LALT(LGUI(KC_LEFT))
+#define KC_WNHLFR LALT(LGUI(KC_RIGHT))
+#define KC_WNFLSC LALT(LGUI(LSFT(KC_F)))
+#define KC_WNTHDL LALT(LCTL(KC_LEFT))
+#define KC_WNTHDR LALT(LCTL(KC_RIGHT))
+#define KC_WNUNDO LALT(LGUI(KC_Z))
+#define KC_SFTSPC LSFT(KC_SPC)
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -68,9 +82,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_RAISE] = LAYOUT( \
   KC_1,    KC_2,    KC_3,    KC_4,    KC_5,         KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    \
-  KC_GRV,  _______, _______, _______, KC_LBRC,      KC_RBRC, _______, _______, KC_BSLS, KC_QUOT, \
+  KC_GRV,  _______, _______, _______, KC_LBRC,      KC_RBRC,KC_LANG1,KC_LANG2, KC_BSLS, KC_QUOT, \
   _______, _______, _______, _______, KC_EQL,       KC_MINS, _______, _______, _______, KC_BSPC, \
-                    _______, _______, _______,      _______, _______, _______                    \
+                    _______, _______,KC_SFTSPC,      _______, _______, _______                    \
 ),
 
 /* Lower
@@ -90,8 +104,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_LOWER] = LAYOUT( \
   KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,      KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, \
-  KC_TILD, EMCSCUT, _______, _______, KC_LCBR,      KC_RCBR, _______, _______, KC_PIPE,  KC_DQT, \
-  _______, _______, _______, _______, KC_PLUS,      KC_UNDS, _______, _______, _______,  KC_DEL, \
+  KC_TILD,KC_WNFLSC,KC_WNHLFL,KC_WNHLFR,KC_LCBR,    KC_RCBR, _______, _______, KC_PIPE,  KC_DQT, \
+  _______,KC_WNUNDO,KC_WNTHDL,KC_WNTHDR,KC_PLUS,      KC_UNDS, _______, _______, _______,  KC_DEL, \
                     _______, _______, _______,      _______, _______, _______                    \
 ),
 
@@ -112,8 +126,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_ADJUST] =  LAYOUT( \
   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,        KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,   \
-  KC_F11,  KC_F12,  SCRSHOT, _______, _______,      KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_LANG1, \
-  RESET,   RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD,      RGB_VAI, RGB_VAD, RGB_SAI, RGB_SAD, KC_LANG2, \
+  KC_F11,  KC_F12,KC_SCSTCB,KC_SCSTFL,_______,      KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, \
+  RESET,   RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD,      RGB_VAI, RGB_VAD, RGB_SAI, RGB_SAD, _______, \
                     _______, _______, _______,      _______, _______, _______                     \
 )
 };
