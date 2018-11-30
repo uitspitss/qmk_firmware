@@ -60,7 +60,7 @@ enum macro_keycodes {
 #define KC_SANDS SFT_T(KC_SPC)
 #define KC_ALTTAB ALT_T(KC_TAB)
 #define KC_CTLENT CTL_T(KC_ENT)
-#define KC_SCSTFL LGUI(KC_DLR)
+#define KC_SCSTFL LGUI(KC_PERC)
 #define KC_SCSTCB LCTL(LGUI(KC_DLR))
 #define KC_WNHLFL LALT(LGUI(KC_LEFT))
 #define KC_WNHLFR LALT(LGUI(KC_RIGHT))
