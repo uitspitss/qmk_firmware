@@ -23,13 +23,6 @@ enum custom_keycodes {
 #define XXXXXXX KC_NO
 
 // Defines for task manager and such
-#define KC_CTLTB CTL_T(KC_TAB)
-#define KC_GUIEI GUI_T(KC_LANG2)
-#define KC_ALTKN ALT_T(KC_LANG1)
-#define KC_CMDESC GUI_T(KC_ESC)
-#define KC_SANDS SFT_T(KC_SPC)
-#define KC_ALTTAB ALT_T(KC_TAB)
-#define KC_CTLENT CTL_T(KC_ENT)
 #define KC_SCSTFL LGUI(KC_PERC)
 #define KC_SCSTCB LCTL(LGUI(KC_DLR))
 #define KC_WNHLFL LALT(LGUI(KC_LEFT))
