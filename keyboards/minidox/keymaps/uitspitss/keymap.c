@@ -31,7 +31,6 @@ enum custom_keycodes {
 #define KC_WNTHDL LALT(LCTL(KC_LEFT))
 #define KC_WNTHDR LALT(LCTL(KC_RIGHT))
 #define KC_WNUNDO LALT(LGUI(KC_Z))
-#define KC_SFTSPC LSFT(KC_SPC)
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -77,7 +76,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_1,    KC_2,    KC_3,    KC_4,    KC_5,         KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    \
   KC_GRV,  _______, _______, _______, KC_LBRC,      KC_RBRC,KC_LANG1,KC_LANG2, KC_BSLS, KC_QUOT, \
   _______, _______, _______, _______, KC_EQL,       KC_MINS, _______, _______, _______, KC_BSPC, \
-                    _______, _______,KC_SFTSPC,      _______, _______, _______                   \
+              _______, _______, LSFT(KC_SPC),       _______, _______, _______                   \
 ),
 
 /* Lower
