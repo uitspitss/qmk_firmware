@@ -34,6 +34,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define PREVENT_STUCK_MODIFIERS
 #define TAPPING_FORCE_HOLD
+#define PERMISSIVE_HOLD
 #define TAPPING_TERM 80
 
 #undef RGBLED_NUM
