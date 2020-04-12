@@ -23,14 +23,19 @@ enum custom_keycodes {
 #define XXXXXXX KC_NO
 
 // Defines for task manager and such
-#define KC_SCSTFL LGUI(KC_PERC)
-#define KC_SCSTCB LCTL(LGUI(KC_DLR))
-#define KC_WNHLFL LALT(LGUI(KC_LEFT))
-#define KC_WNHLFR LALT(LGUI(KC_RIGHT))
-#define KC_WNFLSC LALT(LGUI(LSFT(KC_F)))
-#define KC_WNTHDL LALT(LCTL(KC_LEFT))
-#define KC_WNTHDR LALT(LCTL(KC_RIGHT))
-#define KC_WNUNDO LALT(LGUI(KC_Z))
+#define KC_SSFL   LGUI(KC_PERC)
+#define KC_SSCB   LCTL(LGUI(KC_DLR))
+#define KC_WMHL   LALT(LGUI(KC_LEFT))
+#define KC_WMHR   LALT(LGUI(KC_RIGHT))
+#define KC_WMFS   LALT(LGUI(LSFT(KC_F)))
+#define KC_WM1    LALT(LCTL(KC_LEFT))
+#define KC_WM2    LALT(LCTL(KC_RIGHT))
+#define KC_WM3    LALT(LGUI(LCTL(KC_UP)))
+#define KC_WM4    LALT(LGUI(LCTL(KC_DOWN)))
+#define KC_WM5    LALT(LGUI(LCTL(LSFT(KC_UP))))
+#define KC_WM6    LALT(LGUI(LCTL(LSFT(KC_RIGHT))))
+#define KC_WM7    LALT(LGUI(LCTL(LSFT(KC_DOWN))))
+#define KC_WMUD   LALT(LGUI(KC_Z))
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -96,8 +101,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_LOWER] = LAYOUT( \
   KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,      KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, \
-  KC_TILD,KC_WNFLSC,KC_WNHLFL,KC_WNHLFR,KC_LCBR,    KC_RCBR, _______, _______, KC_PIPE, KC_DQT,  \
-  KC_LALT,KC_WNUNDO,KC_WNTHDL,KC_WNTHDR,KC_PLUS,    KC_UNDS, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, \
+  KC_TILD, KC_WMFS, KC_WMHL, KC_WMHR, KC_LCBR,    KC_RCBR, _______, _______, KC_PIPE, KC_DQT,  \
+  KC_LALT, KC_WMUD, KC_WM1,  KC_WM2,  KC_PLUS,    KC_UNDS, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, \
                     _______, _______, _______,      _______, _______, _______                    \
 ),
 
@@ -118,8 +123,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_ADJUST] =  LAYOUT( \
   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,        KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  \
-  KC_F11,  KC_F12,KC_SCSTCB,KC_SCSTFL,_______,      _______, _______, _______, _______, _______, \
-  RESET,   RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD,      RGB_VAI, RGB_VAD, RGB_SAI, RGB_SAD, _______, \
+  KC_F11,  KC_F12,  KC_SSCB ,KC_SSFL ,_______,      _______, KC_WM5,  KC_WM6,  KC_WM7,  KC_WM3, \
+  RESET,   RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD,      RGB_VAI, RGB_VAD, RGB_SAI, RGB_SAD, KC_WM4, \
                     _______, _______, _______,      _______, _______, _______                    \
 )
 };
