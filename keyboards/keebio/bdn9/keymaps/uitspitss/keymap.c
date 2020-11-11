@@ -15,6 +15,15 @@
  */
 #include QMK_KEYBOARD_H
 
+// Defines for task manager and such
+#define KC_CHRM    KC_F21  // open Google Chrome
+#define KC_SHFT    KC_F22  // open Shift
+#define KC_SPRV    LALT(LGUI(KC_UP))  // Previous Account/App in Shift
+#define KC_SNXT    LALT(LGUI(KC_DOWN))  // Next Account/App in Shift
+#define KC_SEML    LGUI(KC_1)
+#define KC_SCAL    LGUI(KC_2)
+#define KC_SDRV    LGUI(KC_3)
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /*
         | Knob 1: Vol Dn/Up |      | Knob 2: Page Dn/Up |
@@ -23,9 +32,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         | Left              | Down | Right              |
      */
     [0] = LAYOUT(
-        KC_MUTE,   MO(1), KC_MPLY,
-        _______, KC_MSEL, _______,
-        KC_MRWD, KC_MPLY, KC_MFFD
+        KC_MUTE, MT(MO(1),KC_CHRM), KC_MPLY,
+        KC_SEML, KC_SCAL, KC_SDRV,
+        KC_SPRV, KC_SHFT, KC_SNXT
     ),
     /*
         | RESET          | N/A  | Media Stop |
@@ -35,7 +44,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [1] = LAYOUT(
         _______, _______, _______,
         _______, _______, _______,
-          RESET, _______, RGB_MOD
+        RESET,   _______, RGB_MOD
     ),
 };
 
