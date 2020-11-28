@@ -32,10 +32,17 @@ enum custom_keycodes {
 #define KC_WM2    KC_F14  // LALT(LCTL(KC_RIGHT))
 #define KC_WM3    KC_F15  // LALT(LGUI(LCTL(KC_UP)))
 #define KC_WM4    KC_F16  // LALT(LGUI(LCTL(KC_DOWN)))
-#define KC_WM5    KC_F17  // LALT(LGUI(LCTL(LSFT(KC_UP))))
-#define KC_WM6    KC_F18  // LALT(LGUI(LCTL(LSFT(KC_RIGHT))))
-#define KC_WM7    KC_F19  // LALT(LGUI(LCTL(LSFT(KC_DOWN))))
 #define KC_WMUD   LALT(LGUI(KC_Z))
+#define KC_CHRM   KC_F21  // open Google Chrome
+#define KC_SHFT   KC_F22  // open Shift
+#define KC_ITRM   KC_F23  // open iTerm
+#define KC_VSCD   KC_F24  // open VSCode
+#define KC_SPRV   LALT(LGUI(KC_UP))  // Previous Account/App in Shift
+#define KC_SNXT   LALT(LGUI(KC_DOWN))  // Next Account/App in Shift
+#define KC_WSPR   KC_F17
+#define KC_WSNX   KC_F18
+#define KC_1PWD   KC_F19
+#define KC_DASH   KC_F20
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -79,8 +86,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_RAISE] = LAYOUT( \
     KC_1,     KC_2,    KC_3,    KC_4,   KC_5,       KC_6,   KC_7,    KC_8,     KC_9,    KC_0,    \
-  KC_GRV,  _______, _______, _______, KC_LBRC,      KC_RBRC,KC_LANG1,KC_LANG2, KC_BSLS, KC_QUOT, \
-  _______, _______, _______, _______, KC_EQL,       KC_MINS, _______, _______, _______, KC_BSPC, \
+  KC_GRV,  KC_1PWD, KC_DASH, _______, KC_LBRC,      KC_RBRC,KC_LANG1,KC_LANG2, KC_BSLS, KC_QUOT, \
+  _______, KC_SPRV, KC_SHFT, KC_SNXT, KC_EQL,       KC_MINS, KC_ITRM, KC_VSCD, KC_CHRM, KC_BSPC, \
               _______, _______, LSFT(KC_SPC),       _______, _______, _______                    \
 ),
 
@@ -101,8 +108,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_LOWER] = LAYOUT( \
   KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,      KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, \
-  KC_TILD, KC_WMFS, KC_WMHL, KC_WMHR, KC_LCBR,    KC_RCBR, _______, _______, KC_PIPE, KC_DQT,  \
-  KC_LALT, KC_WMUD, KC_WM1,  KC_WM2,  KC_PLUS,    KC_UNDS, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, \
+  KC_TILD, KC_WMFS, KC_WMHL, KC_WMHR, KC_LCBR,      KC_RCBR, KC_WSPR, KC_WSNX, KC_PIPE, KC_DQT,  \
+  KC_LALT, KC_WMUD, KC_WM1,  KC_WM2,  KC_PLUS,      KC_UNDS, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, \
                     _______, _______, _______,      _______, _______, _______                    \
 ),
 
