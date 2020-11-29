@@ -20,22 +20,18 @@
 #endif
 
 #ifndef SPLIT_USB_TIMEOUT
-#    define SPLIT_USB_TIMEOUT 2000
-#endif
-
-#ifndef SPLIT_USB_TIMEOUT_POLL
-#    define SPLIT_USB_TIMEOUT_POLL 10
+  #define SPLIT_USB_TIMEOUT 2500
 #endif
 
 volatile bool isLeftHand = true;
 
 bool waitForUsb(void) {
-    for (uint8_t i = 0; i < (SPLIT_USB_TIMEOUT / SPLIT_USB_TIMEOUT_POLL); i++) {
-        // This will return true if a USB connection has been established
+    for (uint8_t i = 0; i < (SPLIT_USB_TIMEOUT / 100); i++) {
+        // This will return true of a USB connection has been established
         if (UDADDR & _BV(ADDEN)) {
             return true;
         }
-        wait_ms(SPLIT_USB_TIMEOUT_POLL);
+        wait_ms(100);
     }
 
     // Avoid NO_USB_STARTUP_CHECK - Disable USB as the previous checks seem to enable it somehow
@@ -45,7 +41,7 @@ bool waitForUsb(void) {
 }
 
 
-bool is_keyboard_left(void) {
+__attribute__((weak)) bool is_keyboard_left(void) {
 #if defined(SPLIT_HAND_PIN)
     // Test pin SPLIT_HAND_PIN for High/Low, if low it's right hand
     setPinInput(SPLIT_HAND_PIN);
@@ -53,13 +49,13 @@ bool is_keyboard_left(void) {
 #elif defined(EE_HANDS)
     return eeconfig_read_handedness();
 #elif defined(MASTER_RIGHT)
-    return !is_helix_master();
+    return !has_usb();
 #endif
 
-    return is_helix_master();
+    return has_usb();
 }
 
-bool is_helix_master(void) {
+__attribute__((weak)) bool has_usb(void) {
     static enum { UNKNOWN, MASTER, SLAVE } usbstate = UNKNOWN;
 
     // only check once, as this is called often
@@ -100,10 +96,11 @@ static void keyboard_slave_setup(void) {
 void split_keyboard_setup(void) {
    isLeftHand = is_keyboard_left();
 
-   if (is_helix_master()) {
+   if (has_usb()) {
       keyboard_master_setup();
    } else {
       keyboard_slave_setup();
    }
    sei();
 }
+

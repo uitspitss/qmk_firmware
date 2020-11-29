@@ -19,8 +19,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #pragma once
 
 /* USB Device descriptor parameter */
-#define VENDOR_ID       0x04D8
-#define PRODUCT_ID      0xEB5F
+#define VENDOR_ID       0xFEED
+#define PRODUCT_ID      0x3060
 #define DEVICE_VER      0x0007
 #define MANUFACTURER    Salicylic_Acid
 #define PRODUCT         7skb
@@ -33,8 +33,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // wiring of each half
 #define MATRIX_ROW_PINS { D4, C6, D7, E6, B4 }
 #define MATRIX_COL_PINS { F4, F5, F6, F7, B1, B3, B2, B5 }
-
-#define DIODE_DIRECTION COL2ROW
 
 /* Set 0 if debouncing isn't needed */
 #define DEBOUNCE 5
@@ -52,9 +50,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define RGB_DI_PIN D3
 
 #ifndef RGBLED_NUM
-  #define RGBLED_NUM 12
+  #define RGBLED_NUM 10
   #define RGBLIGHT_SPLIT
-  #define RGBLED_SPLIT { 6, 6 }
+  #define RGBLED_SPLIT { 5, 5 }
 #endif
 
 #define RGBLIGHT_ANIMATIONS

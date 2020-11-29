@@ -1,6 +1,9 @@
 # MCU name
 MCU = STM32F303
 
+# Code for backlight breathing:
+SRC += led.c
+
 # Build Options
 #   comment out to disable the options.
 #

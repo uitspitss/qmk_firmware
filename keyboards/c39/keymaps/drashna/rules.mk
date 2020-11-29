@@ -18,5 +18,3 @@ AUDIO_ENABLE = yes           # Audio output on port C6
 RGBLIGHT_ENABLE = yes       # RGB Enable / Disable
 
 RGBLIGHT_STARTUP_ANIMATION = yes
-
-HAPTIC_ENABLE = SOLENOID

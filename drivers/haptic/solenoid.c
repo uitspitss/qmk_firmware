@@ -32,6 +32,14 @@ void solenoid_buzz_off(void) { haptic_set_buzz(0); }
 
 void solenoid_set_buzz(int buzz) { haptic_set_buzz(buzz); }
 
+void solenoid_dwell_minus(uint8_t solenoid_dwell) {
+    if (solenoid_dwell > 0) solenoid_dwell--;
+}
+
+void solenoid_dwell_plus(uint8_t solenoid_dwell) {
+    if (solenoid_dwell < SOLENOID_MAX_DWELL) solenoid_dwell++;
+}
+
 void solenoid_set_dwell(uint8_t dwell) { solenoid_dwell = dwell; }
 
 void solenoid_stop(void) {
@@ -65,7 +73,7 @@ void solenoid_check(void) {
 
     // Check whether to buzz the solenoid on and off
     if (haptic_config.buzz) {
-        if ((elapsed % (SOLENOID_BUZZ_ACTUATED + SOLENOID_BUZZ_NONACTUATED)) < SOLENOID_BUZZ_ACTUATED) {
+        if (elapsed / SOLENOID_MIN_DWELL % 2 == 0) {
             if (!solenoid_buzzing) {
                 solenoid_buzzing = true;
                 writePinHigh(SOLENOID_PIN);

@@ -22,9 +22,6 @@
 #ifdef KEYBOARD_kudox_rev2
     #include "rev2.h"
 #endif
-#ifdef KEYBOARD_kudox_rev3
-    #include "rev3.h"
-#endif
 #ifdef KEYBOARD_kudox_columner
     #include "columner.h"
 #endif

@@ -1,3 +1,4 @@
 # rules.mk overrides to enable VIA
 
-VIA_ENABLE = yes
+RAW_ENABLE = yes
+DYNAMIC_KEYMAP_ENABLE = yes
